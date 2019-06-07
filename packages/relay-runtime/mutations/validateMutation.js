@@ -162,7 +162,9 @@ if (__DEV__) {
     context: ValidationContext,
   ) => {
     if (Array.isArray(optimisticResponse)) {
-      optimisticResponse.forEach(r => validateOptimisticResponse(r, context));
+      optimisticResponse.forEach(r => {
+        validateOptimisticResponse(r, context);
+      });
       return;
     }
     Object.keys(optimisticResponse).forEach((key: string) => {
